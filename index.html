@@ -24,6 +24,7 @@ body{
 h1{
     color:#ff4444;
     font-size:3rem;
+    margin-bottom:20px;
 }
 
 .content{
@@ -73,29 +74,39 @@ button:hover{
     </div>
 
     <div class="buttons">
-        <button onclick="showPrice()">가격 문의하기</button>
+        <button onclick="openPopup()">가격 문의하기</button>
     </div>
 
 </div>
 
 <script>
-function showPrice() {
-    const popup = window.open("", "_blank", "width=400,height=250");
+function openPopup() {
+    const popup = window.open(
+        "",
+        "_blank",
+        "width=400,height=250,left=200,top=200"
+    );
+
+    if (!popup) {
+        alert("팝업이 차단되었습니다. 허용 후 다시 시도하세요.");
+        return;
+    }
 
     popup.document.write(`
         <!DOCTYPE html>
-        <html>
+        <html lang="ko">
         <head>
-            <title>가격 안내</title>
+            <meta charset="UTF-8">
+            <title>가격 문의</title>
             <style>
                 body{
+                    margin:0;
                     background:#111;
                     color:white;
                     display:flex;
                     justify-content:center;
                     align-items:center;
                     height:100vh;
-                    margin:0;
                     font-size:2rem;
                     font-family:sans-serif;
                 }
@@ -106,6 +117,8 @@ function showPrice() {
         </body>
         </html>
     `);
+
+    popup.document.close();
 }
 </script>
 
