@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>액바팀</title>
+
+<style>
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+    font-family: "Malgun Gothic", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff4444;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.content {
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+</style>
+</head>
+
+<body onclick="showFake()">
+
+<div class="container">
+    <h1>액바팀</h1>
+
+    <div class="content">
+        @@ 트롤/탈주에 막힌 내 티어, 심폐소생술 해드립니다 @@<br><br>
+
+        속도/능률/퀄리티 NO.1 ‘잭바팀’<br><br>
+
+        판수 채우기용 무의미한 판치기는 가라!<br>
+        깔끔한 연승 행진으로 증명합니다.<br><br>
+
+        추천인 king 적고 30% 할인 혜택까지 야무지게 챙기세요!
+    </div>
+</div>
+
+<script>
+function showFake() {
+    alert("가짜입니다 😂");
+}
+</script>
+
+</body>
+</html>
