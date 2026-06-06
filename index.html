@@ -13,21 +13,21 @@ body{
     color:#fff;
 }
 
-/* 상단 */
+/* 헤더 */
 .header{
     background:linear-gradient(90deg,#ff2d2d,#ff6a00);
     padding:20px;
     text-align:center;
     font-size:2rem;
     font-weight:bold;
-    letter-spacing:2px;
 }
 
-/* 메인 */
+/* 컨테이너 */
 .container{
     max-width:900px;
     margin:40px auto;
     padding:20px;
+    text-align:center;
 }
 
 /* 배너 */
@@ -35,70 +35,40 @@ body{
     background:#1a1a1a;
     padding:25px;
     border-radius:12px;
-    text-align:center;
-    box-shadow:0 0 20px rgba(255,0,0,0.2);
+    margin-bottom:20px;
 }
 
-.banner h2{
-    color:#ff4b4b;
-    margin-bottom:10px;
-}
-
-.banner p{
-    color:#ccc;
-    line-height:1.6;
-}
-
-/* 카드 */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    margin-top:25px;
-}
-
-.card{
-    background:#181818;
-    padding:15px;
+/* 추천인 박스 */
+.ref-box{
+    margin-top:20px;
+    background:#151515;
+    padding:20px;
     border-radius:10px;
-    text-align:center;
     border:1px solid #2a2a2a;
 }
 
-.card h3{
-    color:#ff4b4b;
-}
-
-/* 버튼 */
-.btn{
-    margin-top:30px;
-    text-align:center;
+input{
+    width:70%;
+    padding:12px;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    font-size:1rem;
 }
 
 button{
     background:linear-gradient(90deg,#ff2d2d,#ff6a00);
     border:none;
-    padding:15px 40px;
-    font-size:1.2rem;
+    padding:12px 20px;
+    margin-left:10px;
     color:white;
-    border-radius:10px;
-    cursor:pointer;
     font-weight:bold;
-    box-shadow:0 5px 15px rgba(255,0,0,0.3);
+    border-radius:8px;
+    cursor:pointer;
 }
 
 button:hover{
     transform:scale(1.05);
-}
-
-/* 후기 */
-.review{
-    margin-top:30px;
-    background:#151515;
-    padding:20px;
-    border-radius:10px;
-    border-left:4px solid #ff4b4b;
-    color:#ccc;
 }
 </style>
 </head>
@@ -112,43 +82,28 @@ button:hover{
 <div class="container">
 
     <div class="banner">
-        <h2>트롤 / 탈주 때문에 망한 티어, 복구 가능합니다</h2>
-        <p>
-            속도 · 안정성 · 승률 집중 관리 서비스<br>
-            “판수만 채우는 작업은 하지 않습니다”
-        </p>
+        <h2>트롤 / 탈주 때문에 망한 티어 복구</h2>
+        <p>속도 · 안정성 · 승률 기반 관리 시스템</p>
     </div>
 
-    <div class="cards">
-        <div class="card">
-            <h3>빠른 작업</h3>
-            <p>평균 24시간 내 티어 상승</p>
-        </div>
-
-        <div class="card">
-            <h3>고승률 유지</h3>
-            <p>연승 중심 운영 시스템</p>
-        </div>
-
-        <div class="card">
-            <h3>비밀 보장</h3>
-            <p>모든 기록 완전 익명 처리</p>
-        </div>
-    </div>
-
-    <div class="review">
-        ⭐ 후기: "진짜 스트레스 없이 올라갔습니다" - KING 고객<br>
-        ⭐ 후기: "트롤만 만나서 포기했는데 복구됨" - USER123
-    </div>
-
-    <div class="btn">
-        <button onclick="openPopup()">가격 문의하기</button>
+    <!-- 추천인 입력 -->
+    <div class="ref-box">
+        <h3>추천인 코드 입력</h3>
+        <input type="text" id="refCode" placeholder="추천인 코드를 입력하세요">
+        <button onclick="checkCode()">확인하기</button>
     </div>
 
 </div>
 
 <script>
-function openPopup(){
+function checkCode(){
+    const code = document.getElementById("refCode").value;
+
+    if(code.trim() === ""){
+        alert("추천인 코드를 입력하세요");
+        return;
+    }
+
     const popup = window.open("", "_blank", "width=400,height=250");
 
     if(!popup){
