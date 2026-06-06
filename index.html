@@ -36,12 +36,10 @@ h1{
 }
 
 button{
-    display:inline-block;
     background:#ff4444;
     color:white;
     border:none;
     padding:15px 30px;
-    margin:10px;
     font-size:1.1rem;
     border-radius:8px;
     cursor:pointer;
@@ -75,20 +73,40 @@ button:hover{
     </div>
 
     <div class="buttons">
-        <button id="contactBtn">문의하기</button>
-        <button id="buyBtn">구매하기</button>
+        <button onclick="showPrice()">가격 문의하기</button>
     </div>
 
 </div>
 
 <script>
-document.getElementById("contactBtn").addEventListener("click", function () {
-    alert("패작 가격: 판당 5000만원");
-});
+function showPrice() {
+    const popup = window.open("", "_blank", "width=400,height=250");
 
-document.getElementById("buyBtn").addEventListener("click", function () {
-    alert("구라야 ㅋ");
-});
+    popup.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>가격 안내</title>
+            <style>
+                body{
+                    background:#111;
+                    color:white;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    height:100vh;
+                    margin:0;
+                    font-size:2rem;
+                    font-family:sans-serif;
+                }
+            </style>
+        </head>
+        <body>
+            구라야 ㅋ
+        </body>
+        </html>
+    `);
+}
 </script>
 
 </body>
