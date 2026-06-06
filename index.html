@@ -3,101 +3,162 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>잭바팀</title>
+<title>잭바팀 | 티어 케어 서비스</title>
 
 <style>
 body{
     margin:0;
-    background:#111;
-    color:white;
-    font-family:"Malgun Gothic",sans-serif;
+    font-family:"Malgun Gothic", sans-serif;
+    background:#0f0f0f;
+    color:#fff;
 }
 
+/* 상단 */
+.header{
+    background:linear-gradient(90deg,#ff2d2d,#ff6a00);
+    padding:20px;
+    text-align:center;
+    font-size:2rem;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/* 메인 */
 .container{
     max-width:900px;
-    margin:50px auto;
+    margin:40px auto;
     padding:20px;
+}
+
+/* 배너 */
+.banner{
+    background:#1a1a1a;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 0 20px rgba(255,0,0,0.2);
+}
+
+.banner h2{
+    color:#ff4b4b;
+    margin-bottom:10px;
+}
+
+.banner p{
+    color:#ccc;
+    line-height:1.6;
+}
+
+/* 카드 */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.card{
+    background:#181818;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    border:1px solid #2a2a2a;
+}
+
+.card h3{
+    color:#ff4b4b;
+}
+
+/* 버튼 */
+.btn{
+    margin-top:30px;
     text-align:center;
 }
 
-h1{
-    color:#ff4444;
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-.content{
-    font-size:1.5rem;
-    line-height:1.8;
-}
-
-.buttons{
-    margin-top:40px;
-}
-
 button{
-    background:#ff4444;
-    color:white;
+    background:linear-gradient(90deg,#ff2d2d,#ff6a00);
     border:none;
-    padding:15px 30px;
-    font-size:1.1rem;
-    border-radius:8px;
+    padding:15px 40px;
+    font-size:1.2rem;
+    color:white;
+    border-radius:10px;
     cursor:pointer;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(255,0,0,0.3);
 }
 
 button:hover{
-    background:#ff6666;
+    transform:scale(1.05);
+}
+
+/* 후기 */
+.review{
+    margin-top:30px;
+    background:#151515;
+    padding:20px;
+    border-radius:10px;
+    border-left:4px solid #ff4b4b;
+    color:#ccc;
 }
 </style>
 </head>
 
 <body>
 
+<div class="header">
+    J A C K B A T E A M
+</div>
+
 <div class="container">
 
-    <h1>잭바팀</h1>
-
-    <div class="content">
-        @@ 트롤/탈주에 막힌 내 티어, 심폐소생술 해드립니다 @@
-        <br><br>
-
-        속도/능률/퀄리티 NO.1 ‘잭바팀’
-        <br><br>
-
-        판수 채우기용 무의미한 판치기는 가라!
-        <br>
-        깔끔한 연승 행진으로 증명합니다.
-        <br><br>
-
-        추천인 king 적고 30% 할인 혜택까지 야무지게 챙기세요!
+    <div class="banner">
+        <h2>트롤 / 탈주 때문에 망한 티어, 복구 가능합니다</h2>
+        <p>
+            속도 · 안정성 · 승률 집중 관리 서비스<br>
+            “판수만 채우는 작업은 하지 않습니다”
+        </p>
     </div>
 
-    <div class="buttons">
+    <div class="cards">
+        <div class="card">
+            <h3>빠른 작업</h3>
+            <p>평균 24시간 내 티어 상승</p>
+        </div>
+
+        <div class="card">
+            <h3>고승률 유지</h3>
+            <p>연승 중심 운영 시스템</p>
+        </div>
+
+        <div class="card">
+            <h3>비밀 보장</h3>
+            <p>모든 기록 완전 익명 처리</p>
+        </div>
+    </div>
+
+    <div class="review">
+        ⭐ 후기: "진짜 스트레스 없이 올라갔습니다" - KING 고객<br>
+        ⭐ 후기: "트롤만 만나서 포기했는데 복구됨" - USER123
+    </div>
+
+    <div class="btn">
         <button onclick="openPopup()">가격 문의하기</button>
     </div>
 
 </div>
 
 <script>
-function openPopup() {
-    const popup = window.open(
-        "",
-        "_blank",
-        "width=400,height=250,left=200,top=200"
-    );
+function openPopup(){
+    const popup = window.open("", "_blank", "width=400,height=250");
 
-    if (!popup) {
-        alert("팝업이 차단되었습니다. 허용 후 다시 시도하세요.");
+    if(!popup){
+        alert("팝업 차단됨");
         return;
     }
 
     popup.document.write(`
-        <!DOCTYPE html>
-        <html lang="ko">
+        <html>
         <head>
-            <meta charset="UTF-8">
-            <title>가격 문의</title>
             <style>
                 body{
                     margin:0;
@@ -117,8 +178,6 @@ function openPopup() {
         </body>
         </html>
     `);
-
-    popup.document.close();
 }
 </script>
 
