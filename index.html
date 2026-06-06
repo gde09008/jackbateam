@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>액바팀</title>
+<title>잭바팀</title>
 
 <style>
 body {
@@ -16,7 +16,6 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
-    cursor: pointer;
 }
 
 .container {
@@ -34,13 +33,32 @@ h1 {
     font-size: 1.5rem;
     line-height: 1.8;
 }
+
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff6666;
+}
 </style>
 </head>
 
-<body onclick="showFake()">
+<body>
 
 <div class="container">
-    <h1>액바팀</h1>
+    <h1>잭바팀</h1>
 
     <div class="content">
         @@ 트롤/탈주에 막힌 내 티어, 심폐소생술 해드립니다 @@<br><br>
@@ -52,11 +70,22 @@ h1 {
 
         추천인 king 적고 30% 할인 혜택까지 야무지게 챙기세요!
     </div>
+
+    <div class="buttons">
+        <button onclick="contact(event)">문의하기</button>
+        <button onclick="buy(event)">구매하기</button>
+    </div>
 </div>
 
 <script>
-function showFake() {
-    alert("가짜입니다 😂");
+function contact(event) {
+    event.stopPropagation();
+    alert("패작 가격: 판당 5000만원");
+}
+
+function buy(event) {
+    event.stopPropagation();
+    alert("구라야 ㅋ");
 }
 </script>
 
